@@ -2,3 +2,76 @@
     color: orange;
     opacity: 1.0;
 }
+
+.x {
+    background-color: lightblue;
+    background-image: url(photos/view.png);
+    background-position: center;
+    background-size: left cover;
+    border-radius: 60px;
+    border: black;
+    width: 350px;
+    padding: 135px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.y{
+    background-color: lightblue;
+    background-image: url(photos/send.png);
+    background-position: center;
+    background-size: left cover;
+    border-radius: 60px;
+    border: black;
+    width: 350px;
+    padding: 135px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.z {
+    background-color: lightblue;
+    background-image: url(photos/edit.png);
+    background-position: center;
+    background-size: left cover;
+    border-radius: 60px;
+    border: black;
+    width: 350px;
+    padding: 135px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.homepage{
+    background-size: 100%;
+    height: 100vh;
+    width: 100vw;
+}
+:root {
+    margin: 0;
+}
+
+.background{
+    opacity: 0.7;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+.homepage-container{
+    z-index: 999;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 370px;
+
+}
+.page-btns {
+    display: flex;
+    flex-direction: row;
+    column-gap: 45px;
+    border: 10px;
+}
