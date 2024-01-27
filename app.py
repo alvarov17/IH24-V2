@@ -23,6 +23,9 @@ def yelp_default_test():
         "GET", url, params=querystring)
 
     return (jsonify(response.json()))
+@app.route('/logged')
+def logged():
+    return render_template('logged.html')
 
 
 
