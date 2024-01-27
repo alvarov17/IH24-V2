@@ -24,6 +24,9 @@ def yelp_default_test():
         "GET", url, params=querystring)
 
     return (jsonify(response.json()))
+@app.route('/home')
+def home():
+    return render_template('home.html')
 
 
 if __name__ == '__main__':

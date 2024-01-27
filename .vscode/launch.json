@@ -7,8 +7,9 @@
         {
             "type": "chrome",
             "request": "launch",
-            "name": "Open landing_page.html",
-            "file": "/Users/curly.mp4/Documents/GitHub/IH24-V2/templates/landing_page.html"
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:8080",
+            "webRoot": "${workspaceFolder}"
         }
     ]
 }
