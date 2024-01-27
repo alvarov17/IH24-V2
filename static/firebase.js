@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
       //const token = credential.accessToken;
       const user = result.user;
       console.log(user)
-      window.location.href = "http://127.0.0.1:5000/logged";
+      window.location.href = "http://127.0.0.1:5000/home";
     }).catch((error) => {
       // Handle Errors here.
       const errorCode = error.code;
