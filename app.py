@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 from flask_cors import CORS
 import requests
 from flask_sqlalchemy import SQLAlchemy
@@ -9,8 +9,10 @@ CORS(app)
 
 @app.route('/')
 def index():
-    return jsonify({'message': 'Hey, everything works!!'})
-
+    return render_template('landing_page.html')
+@app.route('/about')
+def about():
+    return render_template('aboutus.html')
 @app.route('/yelp-test')
 def yelp_default_test():
     url = "https://zotmeal-backend.vercel.app/api"
