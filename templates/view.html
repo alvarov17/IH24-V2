@@ -3,18 +3,23 @@
 
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="{{url_for('static', filename='home.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='send.css')}}">
     <title>View Records</title>
 </head>
 <body>
+    <h1>
+        View Patient Records
+    </h1>
+    <h3>
+        Access and view all patient records here
+    </h3>
     <div class="homepage">
-        <form action="/action_page.php">
-            <input type="file" id="myFile" name="filename">
-            <input type="submit">
-        </form>
-
+        <p class="label">Published: 1/28/2024</p>
+        <img id="dctr-img"class="med-record" src="static/photos/medical_release_form_template-min.png" alt="Medical Records">
     </div>
-
+    <a href="/home">
+        <button id="back-btn" class="submit-btn">Return</button>
+    </a>
 </body> 
     
 
