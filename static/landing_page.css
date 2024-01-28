@@ -11,6 +11,13 @@ h1{
     text-align: center;
 }
 
+.land-logo{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
 
 form{
     width:35rem;

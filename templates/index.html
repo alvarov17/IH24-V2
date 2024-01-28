@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='landing_page.css')}}">
     <title>Document</title>
 </head>
+
 <body>
-    <a href="/about">
-        <button type="button" class="abt">Learn More</button>
-    </a>
-    <a href="/home">
-        <button type="button" class="abt">Login</button>
-    </a>
+    <div style="text-align: center; margin-top: 13%;">
+        <img src="static/photos/Group_13.png"  class="land-logos" alt="Logo" > <h1 class="title">HealthChain</h1>
+    </div>
+    <div class="container">
+        <div class="page-btns">
+            <a href="/about">
+                <button type="button" class="learn">Learn More</button>
+            </a>
+            <a href="/home">
+                <button type="button" class="login">Login</button>
+            </a>
+        </div>
+    </div>
 
 </body>
+
 </html>
