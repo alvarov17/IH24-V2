@@ -1,35 +1,31 @@
-from flask import Flask, jsonify, request, render_template
+from flask import Flask, jsonify, request, render_template, session, redirect, url_for
 from flask_cors import CORS
-import requests
 from flask_sqlalchemy import SQLAlchemy
-
 
 app = Flask(__name__)
 CORS(app)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///mydatabase.db'
-db = SQLAlchemy(app)
+
+# Set a secret key for session management
+app.secret_key = 'your_secret_key'  # Change this to a strong, random secret key
+
+
+def is_user_authenticated():
+    print(str(session))
+    return 'user_id' in session
+
 @app.route('/')
-def index():
+def main_index():
+    return render_template('index.html')
+
+@app.route('/home')
+def login_page():
     return render_template('landing_page.html')
 @app.route('/about')
 def about():
     return render_template('aboutus.html')
-@app.route('/yelp-test')
-def yelp_default_test():
-    url = "https://zotmeal-backend.vercel.app/api"
 
-    querystring = {"location": "anteatery"}
 
-    response = requests.request(
-        "GET", url, params=querystring)
-
-    return (jsonify(response.json()))
-@app.route('/home')
-def home():
-    return render_template('home.html')
 
 
 if __name__ == '__main__':
-    db.create_all()
     app.run(debug=True)
-

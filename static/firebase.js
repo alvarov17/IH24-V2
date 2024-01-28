@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
       //const token = credential.accessToken;
       const user = result.user;
       console.log(user)
-      window.location.href = "/";
+      window.location.href = "/home";
     }).catch((error) => {
       // Handle Errors here.
       const errorCode = error.code;
