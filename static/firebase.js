@@ -20,7 +20,19 @@ const auth = getAuth(app);
 const database = getDatabase();
 auth.languageCode = "en"
 const provider = new GoogleAuthProvider();
+const signOutBtn = document.getElementById('signOutBtn');
 
+auth.onAuthStateChanged(user => {
+  if(user){
+    whenSignedIn.hidden = false;
+    whenSignedOut.hidden = true;
+    userDetails.innerHTML = '<h3>Welcome Back, ' + user.displayName + '!</h3>';
+  }else{
+    whenSignedIn.hidden = true;
+    whenSignedOut.hidden = false;
+    userDetails.innerHTML = '';
+  }
+  });
 
 const test = document.getElementById("form1");
   test.addEventListener("submit", function(e) {
@@ -89,6 +101,10 @@ document.addEventListener("DOMContentLoaded", function() {
       const errorMessage = error.message;
     });
   
+    });
+    signOutBtn.addEventListener("click", function() {
+      auth.signOut();
+      window.location.href = "/";
     });
 });
 

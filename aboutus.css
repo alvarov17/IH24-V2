@@ -2,4 +2,25 @@
     font-size: 20px;
 }
 
-.h1 {color: rgb(58, 206, 255);}
+
+.bonk {
+    box-sizing: border-box;
+}
+
+.img-container {
+    float: left;
+    width: 25%;
+    padding: 5px;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.image-text {
+    text-align: justify;
+    width: 195px
+
+}

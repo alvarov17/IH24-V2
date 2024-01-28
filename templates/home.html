@@ -7,43 +7,36 @@
 </head>
 
     <style>
-        /* body.page {
-            background-image: url(IH24-V2/photos/pexels-pixabay-40568.jpg) repeat center;
-            opacity: 1.0;
-            width: 1450px;
-            height: 900px;
-            } */
         body {
             margin: 0;
         }
     </style>
     <title>
-        PLACEHOLDER
+        Medical Chain
     </title>
+</head>
 
 <body>
     <div class="homepage">
-        <img src="photos/pexels-pixabay-40568.jpg" alt="medical-background" class="background">
+        <img src="static/photos/homebg.png" alt="medical-background" class="background">
         <div class="homepage-container">
-            <h1>
-                Medical Chain
-            </h1>
-            <!--
-            <div>
-                <h2 id="userName"></h2>
-                <h2 id="userEmail"></h2>
-                <img id="userProfilePicture">
-            </div>
-            -->
+            <header>
+                <img src="static/photos/Group_13.png" alt="Logo" class="logo">
+            </header>
+            <!-- <div id="userDetails"></div> -->
+            <nav>
+                <a href="/about">
+                    <button type="button" class="abt">About Us</button>
+                </a>
+
+            </nav>
             <div class="page-btns">
                 <button id="view" type="button" class="x"></button>
                 <button id="send" type="button" class="y"></button>
                 <button id="edit" type="button" class="z"></button>
             </div>
         </div>
-
     </div>
-
 </body> 
 <script src="{{url_for('static', filename='home.js')}}" defer type="module"></script>   
 
