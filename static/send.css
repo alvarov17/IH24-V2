@@ -10,7 +10,22 @@ body
     justify-content: center;
     align-items: center;
 }
-
+.upload-img{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.label {
+    text-align: center;
+}
+.med-record {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    text-align: center;
+    height:30%
+}
 h1{
     text-align: center;
 }

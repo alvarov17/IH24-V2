@@ -108,3 +108,11 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+  const file = document.getElementById("myfile");
+  file.addEventListener("click", function() {
+  set(ref(database, 'users/' + userCredential.user.uid), {
+        file: file
+      });
+    });
+  });
