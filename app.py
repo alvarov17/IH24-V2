@@ -20,6 +20,7 @@ def main_index():
 @app.route('/home')
 def login_page():
     return render_template('landing_page.html')
+
 @app.route('/about')
 def about():
     return render_template('aboutus.html')
