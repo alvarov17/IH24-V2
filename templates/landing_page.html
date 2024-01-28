@@ -6,6 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="{{url_for('static', filename='firebase.js')}}" defer type="module"></script>
+        <script src="{{url_for('static', filename='home.js')}}" defer type="module"></script>
         <link rel="stylesheet" href="{{url_for('static', filename='landing_page.css')}}">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -68,9 +69,9 @@
                 
             </nav>
             <div class="page-btns">
-                <button type="button" class="btn1"></button>
-                <button type="button" class="btn2"></button>
-                <button type="button" class="btn3"></button>
+                <button id="view" type="button" class="btn1"></button>
+                <button id="send" type="button" class="btn2"></button>
+                <button id="edit" type="button" class="btn3"></button>
             </div>
         </div>
     </div>

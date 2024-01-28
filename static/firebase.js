@@ -51,7 +51,7 @@ const register = document.getElementById("register-btn");
         email: email,
         password: password
       });
-      window.location.href = "http://127.0.0.1:5000/home";
+      window.location.href = "/home";
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -74,7 +74,7 @@ const register = document.getElementById("register-btn");
         password: password
       });
       console.log('hello')
-      window.location.href = "http://127.0.0.1:5000/home";
+      window.location.href = "/home";
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function() {
         password: password
       });
       
-      window.location.href = "http://127.0.0.1:5000/home";
+      window.location.href = "/home";
     }).catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;

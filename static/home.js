@@ -10,17 +10,17 @@ document.addEventListener("DOMContentLoaded", function() {
     */
     const view = document.getElementById("view");
     view.addEventListener("click", function() {
-        window.location.href = "http://127.0.0.1:5000/view";
+        window.location.href = "/view";
     });
     const send = document.getElementById("send");
     send.addEventListener("click", function() {
         console.log('asdfasdf2')
-        window.location.href = "http://127.0.0.1:5000/send";
+        window.location.href = "/send";
     });
 
     const edit = document.getElementById("edit");
     edit.addEventListener("click", function() {
         console.log('asdfasdf3')
-        window.location.href = "http://127.0.0.1:5000/edit";
+        window.location.href = "/edit";
     });
 });
