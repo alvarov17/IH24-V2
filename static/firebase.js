@@ -39,7 +39,6 @@ const test = document.getElementById("form1");
     e.preventDefault()
   });
 
-
 const register = document.getElementById("register-btn");
   register.addEventListener("click", function() {
     const email = document.getElementById("email").value
@@ -73,7 +72,6 @@ const register = document.getElementById("register-btn");
         email: email,
         password: password
       });
-      console.log('hello')
       window.location.href = "/home";
     })
     .catch((error) => {
