@@ -12,6 +12,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 
     </head>
+    <script src="app.js" defer></script>
+    <section id="whenSignedOut">
     <body>
         <h1>Welcome to HealthChain!</h1>
         <form action="">
@@ -48,7 +50,13 @@
             
         </form>
     </body>
-    
+    </section>
+    <section id="whenSignedIn" hidden="true">
+        <body>
+            <div id="userDetails"></div>
+            <button id="signOutBtn">Sign Out</button>
+        </body>
+    </section>
 
 
 

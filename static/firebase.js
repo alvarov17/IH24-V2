@@ -25,7 +25,19 @@ const analytics = getAnalytics(app);
 const auth = getAuth(app);
 auth.languageCode = "en"
 const provider = new GoogleAuthProvider();
+const signOutBtn = document.getElementById('signOutBtn');
 
+auth.onAuthStateChanged(user => {
+  if(user){
+    whenSignedIn.hidden = false;
+    whenSignedOut.hidden = true;
+    userDetails.innerHTML = '<h3>Welcome Back, ' + user.displayName + '!</h3>';
+  }else{
+    whenSignedIn.hidden = true;
+    whenSignedOut.hidden = false;
+    userDetails.innerHTML = '';
+  }
+  });
 
 document.addEventListener("DOMContentLoaded", function() {
   const googleLogin = document.getElementById("google-login-btn");
@@ -36,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
       //const token = credential.accessToken;
       const user = result.user;
       console.log(user)
-      window.location.href = "http://127.0.0.1:5000/home";
+      window.location.href = "/";
     }).catch((error) => {
       // Handle Errors here.
       const errorCode = error.code;
@@ -48,6 +60,10 @@ document.addEventListener("DOMContentLoaded", function() {
       // ...
     });
   
+    });
+    signOutBtn.addEventListener("click", function() {
+      auth.signOut();
+      window.location.href = "/";
     });
     
 
