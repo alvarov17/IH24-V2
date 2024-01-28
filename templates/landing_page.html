@@ -10,11 +10,13 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
-
+        <script src="app.js" defer></script>
+        <link rel="stylesheet" href="{{url_for('static', filename='home.css')}}">
     </head>
-    <script src="app.js" defer></script>
-    <section id="whenSignedOut">
+
+    
     <body>
+        <section id="whenSignedOut">
         <h1>Welcome to HealthChain!</h1>
         <form action="">
             <!-- Headings for the form -->
@@ -49,15 +51,29 @@
             </div>
             
         </form>
-    </body>
+
     </section>
     <section id="whenSignedIn" hidden="true">
-        <body>
             <div id="userDetails"></div>
-            <button id="signOutBtn">Sign Out</button>
-        </body>
+   
+    <div class="homepage">
+       <div class="homepage-container">
+            <nav>
+                <button id="signOutBtn" class="sign-out">Sign Out</button>
+                <a href="/about">
+                    <button type="button" class="abt">About Us</button>
+                </a>
+                
+            </nav>
+            <div class="page-btns">
+                <button type="button" class="btn1"></button>
+                <button type="button" class="btn2"></button>
+                <button type="button" class="btn3"></button>
+            </div>
+        </div>
+    </div>
     </section>
 
-
+</body>
 
 </html>
