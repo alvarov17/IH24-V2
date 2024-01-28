@@ -20,10 +20,22 @@ def main_index():
 @app.route('/home')
 def login_page():
     return render_template('landing_page.html')
+
 @app.route('/about')
 def about():
     return render_template('aboutus.html')
 
+@app.route('/view')
+def view():
+    return render_template('construct.html')
+
+@app.route('/send')
+def send():
+    return render_template('construct.html')
+
+@app.route('/edit')
+def edit():
+    return render_template('construct.html')
 
 
 
