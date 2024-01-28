@@ -1,8 +1,20 @@
-
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
-  import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
+  import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, connectAuthEmulator, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-analytics.js";
+  import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-database.js";
+  /*
+  import { 
+    hideLoginError, 
+    showLoginState, 
+    showLoginForm, 
+    showApp, 
+    showLoginError, 
+    btnLogin,
+    btnSignup,
+    btnLogout
+  } from './ui'
+  */
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -23,9 +35,55 @@
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth(app);
+const database = getDatabase();
 auth.languageCode = "en"
 const provider = new GoogleAuthProvider();
 
+
+const test = document.getElementById("form1");
+  test.addEventListener("submit", function(e) {
+    e.preventDefault()
+  });
+
+const register = document.getElementById("register-btn");
+  register.addEventListener("click", function() {
+    const email = document.getElementById("email").value
+    const password = document.getElementById("password").value
+    createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      const user = userCredential.user;
+      console.log('something')
+      set(ref(database, 'users/' + user.uid), {
+        email: email,
+        password: password
+      });
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorCode, errorMessage)
+    });
+  });
+
+  const login = document.getElementById("login-btn");
+  login.addEventListener("click", function() {
+    const email = document.getElementById("email").value
+    const password = document.getElementById("password").value
+
+    createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed up 
+      const user = userCredential.user;
+      set(ref(database, 'users/' + user.uid), {
+        email: email,
+        password: password
+      });
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+    });
+  });
 
 document.addEventListener("DOMContentLoaded", function() {
   const googleLogin = document.getElementById("google-login-btn");
@@ -35,21 +93,18 @@ document.addEventListener("DOMContentLoaded", function() {
       const credential = GoogleAuthProvider.credentialFromResult(result);
       //const token = credential.accessToken;
       const user = result.user;
-      console.log(user)
+      
+      set(ref(database, 'users/' + user.uid), {
+        email: email,
+        password: password
+      });
+      
       window.location.href = "http://127.0.0.1:5000/home";
     }).catch((error) => {
-      // Handle Errors here.
       const errorCode = error.code;
       const errorMessage = error.message;
-      // The email of the user's account used.
-      //const email = error.customData.email;
-      // The AuthCredential type that was used.
-      //const credential = GoogleAuthProvider.credentialFromError(error);
-      // ...
     });
   
     });
-    
-
 });
 

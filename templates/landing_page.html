@@ -14,21 +14,21 @@
     </head>
     <body>
         <h1>Welcome to HealthChain!</h1>
-        <form action="">
+        <form id="form1" action="">
             <!-- Headings for the form -->
             <div class="headingsContainer">
                 <h3>Sign in</h3>
-                <p>Sign in with your username and password</p>
+                <p>Sign in with your email and password</p>
             </div>
             <div class="mainContainer">
                 <!-- Username -->
-                <label for="username">Your username</label>
+                <label for="email">Your email</label>
                 <!-- Make sure to put "required" for both the input fields -->
-                <input type="text" placeholder="Enter Username" name="username" required>
+                <input id="email" type="text" placeholder="Enter Email" name="username" required>
                 <br><br>
                 <!-- Password -->
-                <label for="pswrd">Your password</label>
-                <input type="password" placeholder="Enter Password" name="pswrd" required>
+                <label for="password">Your password</label>
+                <input id="password" type="password" placeholder="Enter Password" name="pswrd" required>
                 <div class="subcontainer">
                     <label>
                       <input type="checkbox" checked="checked" name="remember"> Remember me
@@ -38,10 +38,11 @@
     
                 
                 <div class="input">
-                    <button type="submit">Login</button>
+                    <button id="login-btn" type="submit">Login</button>
                     <button id="google-login-btn" class="google-button">
                         <i class="fab fa-google"></i> Login with Google
                     </button>
+                    <button id="register-btn" type="submit">Register</button>
                 </div>
                 <p class="register">Not a member?  <a href="#">Register here!</a></p>
             </div>
