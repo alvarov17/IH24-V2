@@ -12,8 +12,4 @@ document.addEventListener("DOMContentLoaded", function() {
     edit.addEventListener("click", function() {
         window.location.href = "/edit";
     });
-    const back = document.getElementById("back-btn");
-    back.addEventListener("click", function() {
-        window.location.href = "/home";
-    });
 });
