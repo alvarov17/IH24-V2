@@ -6,7 +6,8 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 CORS(app)
-
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///mydatabase.db'
+db = SQLAlchemy(app)
 @app.route('/')
 def index():
     return render_template('landing_page.html')
@@ -28,14 +29,7 @@ def home():
     return render_template('home.html')
 
 
+if __name__ == '__main__':
+    db.create_all()
+    app.run(debug=True)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///mydatabase.db'
-db = SQLAlchemy(app)
-
-class Item(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(80), nullable=False)
-    description = db.Column(db.String(120))
-
-    def __repr__(self):
-        return '<Item %r>' % self.name
