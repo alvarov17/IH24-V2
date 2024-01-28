@@ -1,25 +1,7 @@
-  // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
   import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, connectAuthEmulator, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-analytics.js";
   import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-database.js";
-  /*
-  import { 
-    hideLoginError, 
-    showLoginState, 
-    showLoginForm, 
-    showApp, 
-    showLoginError, 
-    btnLogin,
-    btnSignup,
-    btnLogout
-  } from './ui'
-  */
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
   const firebaseConfig = {
     apiKey: "AIzaSyDLuMLg29WIj1ikk7qp_1GzBYW6XVl5YCg",
@@ -45,6 +27,7 @@ const test = document.getElementById("form1");
     e.preventDefault()
   });
 
+
 const register = document.getElementById("register-btn");
   register.addEventListener("click", function() {
     const email = document.getElementById("email").value
@@ -52,11 +35,11 @@ const register = document.getElementById("register-btn");
     createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       const user = userCredential.user;
-      console.log('something')
       set(ref(database, 'users/' + user.uid), {
         email: email,
         password: password
       });
+      window.location.href = "http://127.0.0.1:5000/home";
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -78,6 +61,8 @@ const register = document.getElementById("register-btn");
         email: email,
         password: password
       });
+      console.log('hello')
+      window.location.href = "http://127.0.0.1:5000/home";
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -91,7 +76,6 @@ document.addEventListener("DOMContentLoaded", function() {
     signInWithPopup(auth, provider)
     .then((result) => {
       const credential = GoogleAuthProvider.credentialFromResult(result);
-      //const token = credential.accessToken;
       const user = result.user;
       
       set(ref(database, 'users/' + user.uid), {

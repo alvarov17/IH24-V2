@@ -4,6 +4,8 @@
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="{{url_for('static', filename='home.css')}}">
+</head>
+
     <style>
         /* body.page {
             background-image: url(IH24-V2/photos/pexels-pixabay-40568.jpg) repeat center;
@@ -34,16 +36,15 @@
             </div>
             -->
             <div class="page-btns">
-                <button type="button" class="x"></button>
-                <button type="button" class="y"></button>
-                <button type="button" class="z"></button>
+                <button id="view" type="button" class="x"></button>
+                <button id="send" type="button" class="y"></button>
+                <button id="edit" type="button" class="z"></button>
             </div>
         </div>
 
     </div>
 
 </body> 
-    
-</head>
+<script src="{{url_for('static', filename='home.js')}}" defer type="module"></script>   
 
 </html>

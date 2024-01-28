@@ -26,6 +26,16 @@ def yelp_default_test():
 @app.route('/home')
 def home():
     return render_template('home.html')
+@app.route('/view')
+def view():
+    return render_template('view.html')
+@app.route('/send')
+def send():
+    return render_template('send.html')
+@app.route('/edit')
+def edit():
+    return render_template('edit.html')
+
 
 
 
