@@ -3,7 +3,7 @@
     opacity: 1.0;
 }
 
-.x {
+.btn1 {
     background-color: lightblue;
     background-image: url(photos/view.png);
     background-position: center;
@@ -17,7 +17,8 @@
     text-align: center;
 }
 
-.y{
+
+.btn2{
     background-color: lightblue;
     background-image: url(photos/send.png);
     background-position: center;
@@ -31,7 +32,7 @@
     text-align: center;
 }
 
-.z {
+.btn3 {
     background-color: lightblue;
     background-image: url(photos/edit.png);
     background-position: center;
@@ -74,4 +75,12 @@
     flex-direction: row;
     column-gap: 45px;
     border: 10px;
+}
+
+.abt {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    font-size: large;
+    left: 50%;
 }
